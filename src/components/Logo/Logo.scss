@@ -1,0 +1,51 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts/FiraSans/FiraSans.scss';
+
+.logo {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: $case-text;
+	line-height: 1;
+	font-family: 'Fira Sans', sans-serif;
+
+	h1 {
+		font-size: 1.45rem;
+		text-transform: uppercase;
+		position: relative;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset-inline: 0;
+			height: 0.1rem;
+			background-color: $case-color;
+			transform: skewY(-3deg);
+			top: 45%;
+		}
+	}
+
+	h2 {
+		font-size: 0.75rem;
+		font-weight: 200;
+
+		em {
+			font-style: normal;
+			font-weight: 500;
+			color: $main-color;
+		}
+	}
+
+	.light {
+		$color: rgb(255, 60, 60);
+		width: 0.4rem;
+		margin: 0.5rem;
+		aspect-ratio: 1;
+		background-color: $color;
+		border-radius: 100%;
+		border: 0.075rem solid $case-color;
+		box-shadow: 0 0 0.2rem 0.1rem rgba($color, 0.15);
+	}
+}

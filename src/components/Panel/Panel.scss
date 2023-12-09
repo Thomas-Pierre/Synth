@@ -1,0 +1,23 @@
+.panel {
+	width: 100%;
+	min-height: 4rem;
+	gap: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#left,
+#right {
+	width: 30%;
+	flex-shrink: 1;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
+}
+
+#screen {
+	width: 40%;
+	flex-shrink: 0;
+}

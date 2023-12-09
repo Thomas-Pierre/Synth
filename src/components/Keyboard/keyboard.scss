@@ -1,0 +1,39 @@
+@import 'styles/variables.scss';
+
+.keyboard {
+	border-top: 0.2rem solid $grey-1;
+	position: relative;
+	display: flex;
+	z-index: 1;
+	margin-bottom: -0.5rem;
+}
+
+.octave {
+	position: relative;
+	display: flex;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset-inline: 0.2rem;
+		top: -1.25rem;
+		height: 0.5rem;
+		border: 0.05rem solid $case-text;
+		border-bottom-width: 0;
+	}
+
+	&__label {
+		position: absolute;
+		left: calc(50% - 0.5rem);
+		right: calc(50% - 0.5rem);
+		top: -1.45rem;
+		font-size: 0.35rem;
+		text-align: center;
+		color: $case-text;
+		background-color: $case-color;
+		display: flex;
+		gap: 0.35ch;
+		justify-content: center;
+		align-items: center;
+	}
+}

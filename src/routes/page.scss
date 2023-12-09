@@ -1,0 +1,104 @@
+@import 'styles/variables.scss';
+
+main {
+	display: grid;
+	grid-template-rows: 1fr auto;
+	grid-template-columns: auto 1fr;
+	grid-template-areas:
+		'LOGO TOP RIGHT '
+		'LEFT KEYBOARD RIGHT';
+	width: auto;
+	background-color: $case-color;
+	width: auto;
+	padding: 1rem 1rem 0.35rem 1rem;
+	box-shadow: 0.5rem 3rem 6rem -3rem rgba($black, 0.85);
+	position: relative;
+	filter: drop-shadow(0 0.25rem 0.5rem rgba($black, 0.75));
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset-inline: 0.5rem;
+		top: 0.5rem;
+		height: 0.1rem;
+		background-color: rgba($white, 0.85);
+		border-radius: 50%;
+		filter: blur(0.1rem);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset-inline: 0;
+		height: 0.5rem;
+		bottom: 0;
+		background-image: linear-gradient(to bottom, transparent, rgba($black, 0.5) 40%);
+	}
+
+	div {
+		position: absolute;
+		width: 0.5rem;
+		background-color: $main-color;
+		background-image: linear-gradient(to bottom, lighten($main-color, 5%), darken($main-color, 5%));
+		inset-block: -0.05rem;
+		z-index: 1;
+
+		&.border-left {
+			left: -0.5rem;
+			border-top-left-radius: 0.2rem;
+			border-bottom-left-radius: 0.2rem;
+			transform: perspective(12rem) rotateY(10deg);
+		}
+
+		&.border-right {
+			right: -0.5rem;
+			border-top-right-radius: 0.2rem;
+			border-bottom-right-radius: 0.2rem;
+			transform: perspective(12rem) rotateY(-10deg);
+		}
+	}
+}
+
+#logo {
+	grid-area: LOGO;
+}
+
+#top {
+	grid-area: TOP;
+}
+
+#left {
+	grid-area: LEFT;
+	color: rgba(white, 0.75);
+	padding-right: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+#keyboard {
+	grid-area: KEYBOARD;
+	position: relative;
+	margin-top: 1rem;
+	border-top: 0.4rem solid rgba($black, 0.8);
+	border-left: 0.1rem solid rgba($black, 0.8);
+	border-right: 0.1rem solid rgba($black, 0.8);
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset-inline: 0;
+		top: -0.35em;
+		height: 0.15rem;
+		background-image: linear-gradient(to right, darken($main-color, 5%), lighten($main-color, 5%));
+		box-shadow: inset 0.5rem 0 0.15rem rem black;
+		border-bottom-left-radius: 0.2rem;
+		border-bottom-right-radius: 0.2rem;
+		opacity: 0.75;
+		z-index: 2;
+	}
+}
+
+#right {
+	grid-area: RIGHT;
+}

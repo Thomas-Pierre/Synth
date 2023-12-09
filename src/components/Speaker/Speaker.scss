@@ -1,0 +1,12 @@
+@use 'sass:math';
+@import 'styles/variables.scss';
+
+$width: 5rem;
+
+div {
+	flex-shrink: 0;
+	width: $width;
+	aspect-ratio: 1.3;
+	background-image: radial-gradient($black 0.05rem, $grey-3 0.1rem, transparent 0);
+	background-size: math.div($width, 12) math.div($width, 12);
+}

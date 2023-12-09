@@ -1,0 +1,45 @@
+@import 'styles/variables.scss';
+
+.buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+
+	&-group {
+		width: 100%;
+		position: relative;
+		color: $case-text;
+
+		&--alt {
+			color: rgba($main-color, 0.75);
+		}
+
+		div {
+			margin-block: 0.25rem;
+			display: flex;
+			gap: 0.5rem;
+			justify-content: space-between;
+		}
+
+		h4 {
+			font-weight: normal;
+			display: inline-block;
+			padding: 0.1rem 0.3rem;
+			font-size: 0.5rem;
+			color: currentColor;
+			text-align: center;
+			background-color: $case-color;
+
+			&::before {
+				content: '';
+				position: absolute;
+				inset-inline: 0.2rem;
+				top: 0.75rem;
+				height: 0.25rem;
+				border: 0.05rem solid currentColor;
+				border-bottom: none;
+				z-index: -1;
+			}
+		}
+	}
+}

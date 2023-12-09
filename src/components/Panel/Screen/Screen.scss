@@ -1,0 +1,51 @@
+@import 'styles/variables.scss';
+@import 'styles/fonts/VT323/VT323.scss';
+
+.screen {
+	display: flex;
+	width: 100%;
+	position: relative;
+	background-color: $screen-color;
+	color: lighten($screen-color, 30);
+	padding: 0.125rem 0.125rem 0.125rem 0.5rem;
+	line-height: 0.85em;
+	font-family: 'VT323', monospace;
+	letter-spacing: 0.1ch;
+	border: 0.125rem solid;
+	border-left-color: $grey-1;
+	border-top-color: $grey-1;
+	border-right-color: $grey-3;
+	border-bottom-color: $grey-3;
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		background-image: linear-gradient(170deg, rgba($white, 0.035) 49%, transparent 51%);
+	}
+
+	&__left {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+
+	&__line {
+		gap: 1ch;
+		line-height: 1;
+		display: flex;
+		align-items: center;
+
+		&__content {
+			width: 100%;
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__wave {
+		width: 50%;
+		height: 3.5rem;
+	}
+}
