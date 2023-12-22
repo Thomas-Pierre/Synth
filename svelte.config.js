@@ -9,8 +9,8 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: undefined,
-			precompress: false,
-			strict: true
+			precompress: true,
+			strict: false
 		}),
 		alias: {
 			src: './src',
