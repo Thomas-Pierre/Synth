@@ -57,6 +57,22 @@ main {
 			transform: perspective(12rem) rotateY(-10deg);
 		}
 	}
+
+	code {
+		position: absolute;
+		top: 100%;
+		inset-inline: 0;
+		display: flex;
+		justify-content: space-evenly;
+		padding-top: 3rem;
+
+		select {
+			width: 3rem;
+			padding: 0.1rem;
+			font-size: 1rem;
+			text-align: center;
+		}
+	}
 }
 
 #logo {
