@@ -1,5 +1,6 @@
 <script>
 	import 'styles/base.scss';
+	import { onMount } from 'svelte';
 	import Logo from 'components/Logo/Logo.svelte';
 	import Controls from 'components/Controls/Controls.svelte';
 	import Panel from 'components/Panel/Panel.svelte';
@@ -7,7 +8,7 @@
 	import OnOff from 'src/components/OnOff/OnOff.svelte';
 
 	export let data;
-	let { octaves = '3', from = '3' } = data;
+	let { octaves, from } = data;
 
 	const updateValues = () => {
 		const url = new URL(window.location.href);
@@ -17,6 +18,11 @@
 
 		window.location.search = params.toString();
 	};
+
+	onMount(() => {
+		const { origin, pathname } = window.location;
+		window.history.replaceState(null, null, origin + pathname + `?octaves=${octaves}&from=${from}`);
+	});
 </script>
 
 <main>

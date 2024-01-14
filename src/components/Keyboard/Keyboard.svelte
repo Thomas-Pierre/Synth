@@ -2,8 +2,8 @@
 	import Picto from 'components/Picto/Picto.svelte';
 	import Key from 'components/Keyboard/Key/Key.svelte';
 
-	export let octaves = 2;
-	export let from = 2;
+	export let octaves = undefined;
+	export let from = undefined;
 </script>
 
 <div class="keyboard">
