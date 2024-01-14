@@ -42,7 +42,7 @@ export async function makeSound(holder = window || {}, { type, frequency, durati
 	// REVERB
 	const reverbNode = audioCtx.createConvolver();
 	if (_reverb) {
-		let response = await fetch('/sounds/ding_3.wav');
+		let response = await fetch('/sounds/echo.wav');
 
 		let arraybuffer = await response.arrayBuffer();
 		reverbNode.buffer = await audioCtx.decodeAudioData(arraybuffer);
@@ -51,7 +51,7 @@ export async function makeSound(holder = window || {}, { type, frequency, durati
 
 	// SUSTAIN
 	if (!_sustain) {
-		gainNode.gain.exponentialRampToValueAtTime(0.005, audioCtx.currentTime + duration);
+		gainNode.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + duration);
 		setTimeout(() => stopSound(holder), duration * 1000);
 	}
 

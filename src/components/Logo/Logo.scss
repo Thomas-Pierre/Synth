@@ -39,13 +39,22 @@
 	}
 
 	.light {
-		$color: rgb(255, 60, 60);
 		width: 0.4rem;
 		margin: 0.5rem;
 		aspect-ratio: 1;
-		background-color: $color;
 		border-radius: 100%;
+		transition: background-color 100ms ease, box-shadow 100ms ease;
+
+		$color: rgba(255, 60, 60, 0.25);
+		background-color: $color;
 		border: 0.075rem solid $case-color;
 		box-shadow: 0 0 0.2rem 0.1rem rgba($color, 0.15);
+
+		&.isOn {
+			$color: rgba(255, 60, 60, 0.95);
+			background-color: $color;
+			border: 0.075rem solid $case-color;
+			box-shadow: 0 0 0.2rem 0.1rem rgba($color, 0.15);
+		}
 	}
 }

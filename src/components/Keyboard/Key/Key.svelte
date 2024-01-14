@@ -16,7 +16,7 @@
 
 		const type = $soundType;
 		const frequency = key.getAttribute('frequency');
-		const duration = $sustain ? 10e3 : 1.5; // seconds
+		const duration = $sustain ? 10e3 : 3; // seconds
 
 		makeSound(key, { type, duration, frequency });
 	}
@@ -41,8 +41,8 @@
 		on:mouseup={releaseKey}
 		on:mouseenter={(e) => e?.buttons > 0 && pressKey()}
 		on:mouseout={releaseKey}
-		value={notes.find(({ value }) => value === note + octave + (alt ? '#' : '')).value}
-		frequency={notes.find(({ value }) => value === note + octave + (alt ? '#' : '')).frequency}
+		value={notes.find(({ value }) => value === note + octave + (alt ? '#' : ''))?.value}
+		frequency={notes.find(({ value }) => value === note + octave + (alt ? '#' : ''))?.frequency}
 	/>
 </div>
 

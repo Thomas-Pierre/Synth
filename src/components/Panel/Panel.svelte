@@ -4,6 +4,7 @@
 	import Pitch from 'components/Pitch/Pitch.svelte';
 	import Speaker from 'components/Speaker/Speaker.svelte';
 
+	import { on } from 'src/stores/on';
 	import { sustain, toggleSustain } from 'stores/sustain';
 	import { reverb, toggleReverb } from 'stores/reverb';
 	import { metronome, toggleMetronome } from 'stores/metronome';
@@ -14,9 +15,9 @@
 	<Speaker />
 
 	<section id="left">
-		<Button label="Sustain" action={toggleSustain} active={$sustain} />
-		<Button label="Reverb" action={toggleReverb} active={$reverb} />
-		<Button label="Metronome" action={toggleMetronome} active={$metronome} />
+		<Button label="Sustain" action={toggleSustain} active={$on && $sustain} />
+		<Button label="Reverb" action={toggleReverb} active={$on && $reverb} />
+		<Button label="Metronome" action={toggleMetronome} active={$on && $metronome} />
 	</section>
 
 	<section id="screen"><Screen /></section>
