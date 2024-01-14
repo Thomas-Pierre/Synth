@@ -27,5 +27,5 @@
 </div>
 
 <style lang="scss">
-	@import './keyboard.scss';
+	@import './Keyboard.scss';
 </style>
