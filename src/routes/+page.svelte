@@ -66,7 +66,7 @@
 		</strong>
 	</code>
 
-	<small>Certain hardware or sound cards may cause extraneous noise or cause the application to malfunction.</small>
+	<small>*Attention : Certain hardware or sound cards may cause extraneous noise or cause the application to malfunction.</small>
 </main>
 
 <style lang="scss">
