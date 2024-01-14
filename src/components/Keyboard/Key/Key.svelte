@@ -2,7 +2,7 @@
 	import { makeSound, stopSound } from 'utils/oscillator';
 	import { soundType } from 'stores/sound';
 	import { sustain } from 'stores/sustain';
-	import notes from './key.notes';
+	import notes from './Key.notes';
 
 	export let octave = 0;
 	export let note = undefined;
