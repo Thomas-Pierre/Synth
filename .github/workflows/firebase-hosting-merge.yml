@@ -24,4 +24,4 @@ jobs:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SYNTH_CD39E }}'
           channelId: live
-          projectId: mycollection-b04
+          projectId: synth-cd39e
