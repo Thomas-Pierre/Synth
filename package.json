@@ -35,7 +35,7 @@
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0"
 	},
-	"svelte": "./dist/index.js",
+	"svelte": "./build/index.html",
 	"type": "module",
 	"dependencies": {
 		"@fortawesome/free-solid-svg-icons": "^6.4.2",
