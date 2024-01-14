@@ -65,14 +65,24 @@ main {
 		display: flex;
 		justify-content: space-evenly;
 		margin: auto;
-		padding-top: 3rem;
+		padding-top: 1rem;
+		font-size: 0.8rem;
 
 		select {
-			width: 3rem;
+			font-size: inherit;
+			width: 2rem;
 			padding: 0.1rem;
-			font-size: 1rem;
 			text-align: center;
 		}
+	}
+
+	small {
+		position: absolute;
+		top: 100%;
+		padding-top: 3rem;
+		font-size: 0.6rem;
+		font-style: italic;
+		pointer-events: none;
 	}
 }
 

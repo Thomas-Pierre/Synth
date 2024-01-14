@@ -1,27 +1,36 @@
 <script>
 	import 'styles/base.scss';
+	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import Logo from 'components/Logo/Logo.svelte';
 	import Controls from 'components/Controls/Controls.svelte';
 	import Panel from 'components/Panel/Panel.svelte';
 	import Keyboard from 'components/Keyboard/Keyboard.svelte';
 	import OnOff from 'src/components/OnOff/OnOff.svelte';
+	import { page } from '$app/stores';
 
-	export let data;
-	let { octaves, from } = data;
+	let octaves = '3';
+	let from = '3';
 
-	const updateValues = () => {
+	const updateValues = (values) => {
+		const { origin, pathname } = window.location;
 		const url = new URL(window.location.href);
 		const params = new URLSearchParams(url.search);
-		params.set('octaves', octaves);
-		params.set('from', from);
 
-		window.location.search = params.toString();
+		params.set('octaves', values.octaves);
+		params.set('from', values.from);
+
+		octaves = values.octaves.toString();
+		from = values.octaves.toString();
+
+		window.history.replaceState(null, null, origin + pathname + '?' + params.toString());
 	};
 
 	onMount(() => {
-		const { origin, pathname } = window.location;
-		window.history.replaceState(null, null, origin + pathname + `?octaves=${octaves}&from=${from}`);
+		updateValues({
+			octaves: $page.url.searchParams.get('octaves') || '3',
+			from: $page.url.searchParams.get('from') || '3'
+		});
 	});
 </script>
 
@@ -40,7 +49,7 @@
 	<code>
 		<strong>
 			<label for="octaves">Octaves</label>
-			<select name="octaves" id="octaves" bind:value={octaves} on:change={updateValues}>
+			<select name="octaves" id="octaves" bind:value={octaves} on:change={() => updateValues({ octaves, from })}>
 				<option value="3">3</option>
 				<option value="4">4</option>
 			</select>
@@ -56,6 +65,8 @@
 			</select>
 		</strong>
 	</code>
+
+	<small>Certain hardware or sound cards may cause extraneous noise or cause the application to malfunction.</small>
 </main>
 
 <style lang="scss">

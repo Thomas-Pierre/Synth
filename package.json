@@ -1,6 +1,11 @@
 {
 	"name": "synth-v2",
 	"version": "0.0.1",
+	"exports": {
+		".": {
+			"svelte": "./build/index.html"
+		}
+	},
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
